@@ -4,11 +4,11 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
+from pathlib import Path
 
 load_dotenv()
 
 embeddings = OpenAIEmbeddings()
-
 current_retriever = None
 
 def build_retriever(file_path, chunk_size=500, chunk_overlap=200, k=2):
@@ -49,9 +49,11 @@ def update_retriever(file_path):
         print(f"Failed to update RAG: {e}")
         return False
 
-from pathlib import Path
-PATH_DIR=Path(__file__).resolve().parent.parent
-DATA_DIR= PATH_DIR / "data"
+PATH_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = PATH_DIR / "temp_data"
 
-if os.path.exists(DATA_DIR):
-    update_retriever(DATA_DIR)
+os.makedirs(DATA_DIR, exist_ok=True)  
+
+pdf_files = list(DATA_DIR.glob("*.pdf"))
+if pdf_files:
+    update_retriever(pdf_files[0])
