@@ -12,7 +12,6 @@ import os
 #tool nodes
 from src.tool import *
 from langgraph.prebuilt import ToolNode, tools_condition
-from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_core.tools import tool
 from pathlib import Path
 
@@ -35,9 +34,13 @@ def chat_node(state:State):
 
 #Memory 
 PATH = Path(__file__).resolve().parent.parent
-DATABASE=PATH / "database" / "chatbot.db"
+DB_FOLDER = PATH / "database"
+DB_FOLDER.mkdir(parents=True, exist_ok=True)  
+
+DATABASE = DB_FOLDER / "chatbot.db"
+
 conn = sqlite3.connect(DATABASE, check_same_thread=False)
-checkpointer=SqliteSaver(conn=conn)
+checkpointer = SqliteSaver(conn=conn)
 
 #create nodes and edges 
 tool_node= ToolNode(tools) 
