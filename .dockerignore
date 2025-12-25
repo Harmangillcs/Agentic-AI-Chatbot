@@ -1,0 +1,28 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environment
+venv/
+bot/
+.env
+
+# Logs
+*.log
+
+# Temp data file
+temp_data/
+
+# Chroma / vectorstore files
+database/
+*.db
+*.sqlite
+
+# VSCode and OS files
+.vscode/
+.DS_Store
+
+

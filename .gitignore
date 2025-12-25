@@ -1,0 +1,39 @@
+.env
+.env/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+# Assuming your virtual environment is named 'bot'
+bot/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Jupyter/IPython Notebook Files
+.ipynb_checkpoints
+
+# IDE and Editor Folders/Files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Database Files
+# Your specific database files as seen in the uploaded content
+chatbot.db
+chatbot.db/
+
+database/
+
+*.sqlite
+*.sqlite-journal
+*.db-journal
+*.db-shm
+*.db-wal
+
