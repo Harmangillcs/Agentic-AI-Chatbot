@@ -42,12 +42,13 @@ pip install -r requirements.txt
 ```
 
 ## Add your environment variables
-
-OPENAI_API_KEY=your_openai_api_key
-ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key
-TAVILY_API_KEY=your_tavily_key
-LANGCHAIN_API_KEY=langchain_api_key
+OPENAI_API_KEY=your_openai_api_key_here
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+LANGCHAIN_API_KEY='your_langchain_api_key_here'
 LANGCHAIN_PROJECT='Langgraph Chatbot'
+TAVILY_API_KEY="your_tavily_api_key_here"
+
 
 ## Run the App
 Run locally
