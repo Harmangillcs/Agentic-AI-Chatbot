@@ -57,6 +57,6 @@ streamlit run app.py
 
 ## run with Docker
 ```bash
-docker build -t langgraph-chatbot .
-docker run -p 8501:8501 --env-file Agentic_Chatbot/.env langgraph-chatbot
+docker pull harmangal/agentic_bot
+docker run -d -p 8501:8501 --env-file .env harmangal/agentic_bot
 ```
