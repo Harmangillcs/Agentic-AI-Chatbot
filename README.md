@@ -26,7 +26,7 @@ RAG for external search
 
 ## Clone the repository
 ```bash
-git clone <your-repo-link>
+git clone <https://github.com/Harmangillcs/Agentic-AI-Chatbot>
 cd project
 ```
 
